@@ -57,14 +57,14 @@
     </style>
 </head>
 <body>
-    <h1>Dog-Gone QR Generator</h1>
+    <h1>Lost-Cat QR Generator</h1>
     <form id="qr-form">
         <label for="phone">Phone Number:</label>
         <input type="text" id="phone" required>
         <label for="phone1">Alternative Phone Number:</label>
         <input type="text" id="phone1">
-        <label for="dogname">Dog Name:</label>
-        <input type="text" id="dogname" required>
+        <label for="catname">Cat Name:</label>
+        <input type="text" id="catname" required>
         <br><br>
         <button type="submit">Generate QR Code</button>
     </form>
@@ -74,17 +74,17 @@
         <button id="download-button" style="display: none;">Download QR Code</button>
     </div>
     <div class="qr-content" id="qr-content" style="display: none;">
-        <p>If you would like to order a QR Tag from our Etsy store, please click the 'Copy QR Text' button then click the 'Order a Dog-Gone Tag' button, you can then paste it directly into the personalisation space on the order page:</p>
+        <p>If you would like to order a QR Tag from our Etsy store, please click the 'Copy QR Text' button then click the 'Order a Lost-Cat Tag' button, you can then paste it directly into the personalisation space on the order page:</p>
         <p id="qr-text" class="invisible"></p>
         <button id="copy-button">Copy QR Text</button>
     </div>
     <br>
     <div class="centered-content">
         <a href="https://amzn.to/4bOsYuz" target="_blank">
-            <img id="dog-gone-image" src="https://sheffieldengraving.com/cdn/shop/products/A8_5dc76f22-8820-43e1-911a-d26a59817d99.jpg?v=1667143730&width=360" alt="Dog-Gone Tag">
+            <img id="dog-gone-image" src="https://sheffieldengraving.com/cdn/shop/products/A8_5dc76f22-8820-43e1-911a-d26a59817d99.jpg?v=1667143730&width=360" alt="Lost-Cat Tag">
         </a>
     </div>
-    <button id="order-button" class="hidden">Order a Dog-Gone Tag</button>
+    <button id="order-button" class="hidden">Order a Lost-Cat Tag</button>
     <br><br>
     <div class="container hidden" id="donation-container">
         <div class="text">
@@ -100,7 +100,7 @@
             const qrForm = document.getElementById('qr-form');
             const phoneInput = document.getElementById('phone');
             const phone1Input = document.getElementById('phone1');
-            const dognameInput = document.getElementById('dogname');
+            const catnameInput = document.getElementById('catname');
             const qrImage = document.getElementById('qr-image');
             const downloadButton = document.getElementById('download-button');
             const orderButton = document.getElementById('order-button');
@@ -112,20 +112,20 @@
             qrForm.addEventListener('submit', function(event) {
                 event.preventDefault();
 
-                let defaultURL = 'https://blimboy.github.io/Dog-Gone/index2.html';
+                let defaultURL = 'https://blimboy.github.io/Lost-Cat/index2.html';
                 const phone = phoneInput.value.trim().slice(-10); // Get the last 10 digits
                 const phone1 = phone1Input.value.trim().slice(-10); // Get the last 10 digits if provided
                 const dogname = encodeURIComponent(dognameInput.value.trim());
 
                 if (!phone1) {
-                    defaultURL = 'https://blimboy.github.io/Dog-Gone/index1.html';
+                    defaultURL = 'https://blimboy.github.io/Lost-Cat/index1.html';
                 }
 
                 let qrContent = `${defaultURL}?phone=%2B44${phone}`;
                 if (phone1) {
                     qrContent += `&phone1=%2B44${phone1}`;
                 }
-                qrContent += `&dogname=${dogname}`;
+                qrContent += `&dogname=${catname}`;
 
                 const qrSize = 200; // Size of the QR code
 
