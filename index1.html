@@ -54,7 +54,7 @@
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
                     const googleMapsUrl = `https://www.google.com/maps/@${latitude},${longitude},14z?entry=ttu`;
-                    const smsBody = `Hi, I've found your dog ${name}. Here's my current location:\n${googleMapsUrl}`;
+                    const smsBody = `Hi, I've found your cat ${name}. Here's my current location:\n${googleMapsUrl}`;
                     const encodedSmsBody = encodeURIComponent(smsBody);
 
                     // Open the SMS app with the pre-filled message
@@ -76,7 +76,7 @@
         // Main logic
         document.addEventListener("DOMContentLoaded", function() {
             const phoneNumber = getQueryParam('phone');
-            const name = getQueryParam('dogname');
+            const name = getQueryParam('catname');
 
             if (phoneNumber && name) {
                 const messageDiv = document.getElementById('message');
