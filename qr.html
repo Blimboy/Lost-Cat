@@ -81,7 +81,7 @@
     <br>
     <div class="centered-content">
         <a href="https://amzn.to/4bOsYuz" target="_blank">
-            <img id="dog-gone-image" src="https://sheffieldengraving.com/cdn/shop/products/A8_5dc76f22-8820-43e1-911a-d26a59817d99.jpg?v=1667143730&width=360" alt="Lost-Cat Tag">
+            <img id="dog-gone-image" src="https://sheffieldengraving.com/cdn/shop/products/A8_5dc76f22-8820-43e1-911a-d26a59817d99.jpg?v=1667143730&width=360" alt="Dog-Gone Tag">
         </a>
     </div>
     <button id="order-button" class="hidden">Order a Lost-Cat Tag</button>
@@ -100,7 +100,7 @@
             const qrForm = document.getElementById('qr-form');
             const phoneInput = document.getElementById('phone');
             const phone1Input = document.getElementById('phone1');
-            const catnameInput = document.getElementById('catname');
+            const dognameInput = document.getElementById('catname');
             const qrImage = document.getElementById('qr-image');
             const downloadButton = document.getElementById('download-button');
             const orderButton = document.getElementById('order-button');
@@ -125,7 +125,7 @@
                 if (phone1) {
                     qrContent += `&phone1=%2B44${phone1}`;
                 }
-                qrContent += `&dogname=${catname}`;
+                qrContent += `&catname=${catname}`;
 
                 const qrSize = 200; // Size of the QR code
 
